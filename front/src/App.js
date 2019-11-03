@@ -1,13 +1,17 @@
 import React from "react";
 import Login from "./component/login/Login";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./component/home/Home";
+import E404 from "./component/error/404";
 
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Login} />
-      <Route path="/home" component={Home} />
+      <Switch>
+        <Route path="/" exact component={Login} />
+        <Route path="/home" component={Home} />
+        <Route component={E404} />
+      </Switch>
     </Router>
   );
 }
