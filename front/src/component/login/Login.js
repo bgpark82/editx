@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AuthService from "../../service/AuthService";
 
 export default class Login extends Component {
   state = {
@@ -17,6 +18,7 @@ export default class Login extends Component {
     if (this.state.username === "1234" && this.state.password === "1234") {
       this.setState({ isLoginSuccess: true });
       this.setState({ isLoginFail: false });
+      AuthService.login(this.state.username);
       this.props.history.push(`/home/${this.state.username}`);
     } else {
       this.setState({ isLoginSuccess: false });
