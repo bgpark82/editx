@@ -17,8 +17,7 @@ export default class Login extends Component {
     if (this.state.username === "1234" && this.state.password === "1234") {
       this.setState({ isLoginSuccess: true });
       this.setState({ isLoginFail: false });
-      console.log(this);
-      this.props.history.push("/home");
+      this.props.history.push(`/home/${this.state.username}`);
     } else {
       this.setState({ isLoginSuccess: false });
       this.setState({ isLoginFail: true });
