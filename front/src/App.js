@@ -6,6 +6,7 @@ import E404 from "./component/error/404";
 import Page from "./component/page/Page";
 import Header from "./component/section/Header";
 import Footer from "./component/section/Footer";
+import Logout from "./component/login/Logout";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <Route path="/home/:name" component={Home} />
         <Route path="/page" component={Page} />
         <Route component={E404} />
