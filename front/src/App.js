@@ -7,6 +7,7 @@ import Page from "./component/page/Page";
 import Header from "./component/section/Header";
 import Footer from "./component/section/Footer";
 import Logout from "./component/login/Logout";
+import AuthenticatedRoute from "./service/AuthenticatedRoute";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/login" component={Login} />
-        <Route path="/logout" component={Logout} />
-        <Route path="/home/:name" component={Home} />
-        <Route path="/page" component={Page} />
+        <AuthenticatedRoute path="/logout" component={Logout} />
+        <AuthenticatedRoute path="/home/:name" component={Home} />
+        <AuthenticatedRoute path="/page" component={Page} />
         <Route component={E404} />
       </Switch>
       <Footer />
